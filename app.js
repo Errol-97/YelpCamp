@@ -37,7 +37,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 mongoose.connect("mongodb+srv://webDev:Errol1@sc@cluster0-ovcne.mongodb.net/test?retryWrites=true&w=majority", {
-	useNewUrlParser: true,\
+	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useCreateIndex: true
 }).then(() => {
