@@ -5,7 +5,6 @@ var middleWare = require("../middleware");//automatically requires from file 'in
 //index
 router.get("/", function(req, res){
 	//get all campgrounds from db
-	req.user
 	Campground.find({}, function(err, allCampgrounds){
 		if(err){
 			console.log(err);
