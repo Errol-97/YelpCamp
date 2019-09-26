@@ -37,9 +37,9 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 mongoose.connect("mongodb+srv://webDev:Errol1@sc@cluster0-ovcne.mongodb.net/test?retryWrites=true&w=majority", {
-	useNewUrlParser: true,
-	useCreateIndex: true,
-	useUnifiedTopology: true
+	useNewUrlParser: true,\
+	useUnifiedTopology: true,
+	useCreateIndex: true
 }).then(() => {
 	console.log('Connected to DB');
 }).catch(err => {
@@ -68,13 +68,13 @@ app.use(indexRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
 
-// app.listen(process.env.PORT, process.env.IP, function(){
-// 	console.log("The YelpCamp Server has started");
-// });
-
-app.listen(1000, function(){
-	console.log("The YelpCamp Server has started on port 1000");
+app.listen(process.env.PORT, process.env.IP, function(){
+	console.log("The YelpCamp Server has started");
 });
+
+// app.listen(1000, function(){
+// 	console.log("The YelpCamp Server has started on port 1000");
+// });
 
 // { "_id" : ObjectId("5d79455f1abfef0c1a01b45f"), "name" : "Lion's Heart", "image" : "https://images.unsplash.com/photo-1567647753830-de3fe7ce9f28?ixlib=rb1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9", "__v" : 0 }
 // { "_id" : ObjectId("5d79461d0439270cdecf5ef4"), "name" : "Granite Hill", "image" : "https://images.unsplash.com/photo-1532996078953-a13fa6d622cb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcH
