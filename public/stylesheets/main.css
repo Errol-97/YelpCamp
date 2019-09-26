@@ -1,0 +1,16 @@
+body{
+	background: rgb(219,219,219);
+	background: radial-gradient(circle, rgba(219,219,219,1) 15%, rgba(98,95,98,1) 100%);
+}
+
+.thumbnail{
+	padding: 0;
+}
+
+.thumbnail .caption-full{
+	padding: 9px;
+}
+
+.deleteForm{
+	display: inline;
+}
