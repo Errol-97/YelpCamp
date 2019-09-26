@@ -15,7 +15,7 @@ router.get("/", function(req, res){
 	
 });
 //create
-router.post("/", middleWare.isLoggedIn, async (req, res) =>{
+router.post("/", middleWare.isLoggedIn, function(req, res){
 	//get data from form and add to campgroudns array
 	var name = req.body.name;
 	var image = req.body.image;
@@ -27,7 +27,7 @@ router.post("/", middleWare.isLoggedIn, async (req, res) =>{
 	};
 	var newCamp = {name: name, image: image, desc:desc, author: author, price: price};
 	//create new camp and save to db
-	await Campground.create(newCamp, function(err, newlyCreated){
+	Campground.create(newCamp, function(err, newlyCreated){
 		if(err){
 			console.log(err);
 		} else {
