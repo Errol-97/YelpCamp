@@ -35,26 +35,16 @@ passport.use(new LocalStrategy(User.authenticate()));
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
-
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://webDev:yMIvDZpyqEeAewKw@cluster0-ovcne.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-	console.log('Connected to DB')
+//+srv
+mongoose.connect("mongodb://webDev:yMIvDZpyqEeAewKw@cluster0-ovcne.mongodb.net/test?retryWrites=true&w=majority", {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+	useCreateIndex: true
+}).then(() => {
+	console.log('Connected to DB');
+}).catch(err => {
+	console.log('ERROR:'+err.message);
 });
-
-// mongoose.connect("mongodb+srv://webDev:yMIvDZpyqEeAewKw@cluster0-ovcne.mongodb.net/test?retryWrites=true&w=majority", {
-// 	useNewUrlParser: true,
-// 	useUnifiedTopology: true,
-// 	useCreateIndex: true
-// }).then(() => {
-// 	console.log('Connected to DB');
-// }).catch(err => {
-// 	console.log('ERROR:'+err.message);
-// });
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
