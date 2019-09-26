@@ -36,7 +36,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-mongoose.connect("mongodb+srv://webDev:Errol1@sc@cluster0-ovcne.mongodb.net/test?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://webDev:yMIvDZpyqEeAewKw@cluster0-ovcne.mongodb.net/test?retryWrites=true&w=majority", {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useCreateIndex: true
